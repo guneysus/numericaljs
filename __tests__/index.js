@@ -57,17 +57,16 @@ test("bisection method", t => {
     const fc = Payoff(ir, np, c);
 
     log(i, c, fc, err, 5);
-    
+
     if ((payoff > fa && payoff < fc) || (payoff < fa && payoff > fc)) {
       b = c;
     } else {
       a = c;
     }
 
-    if( err <= eps) {
-        break;
+    if (err <= eps) {
+      break;
     }
-
-    t.pass();
   }
+  t.pass();
 });
