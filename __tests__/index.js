@@ -36,7 +36,9 @@ function log(i, c, fc, err, n = 2) {
 }
 
 test("bisection method", t => {
-  let ir = 0.019;
+  let ir = 0.0199 * 1.020;
+  console.log(ir);
+
   let np = 6;
   let payoff = -799;
 
@@ -44,10 +46,11 @@ test("bisection method", t => {
   let b = 1000;
   let c0 = 0;
   let c = (a + b) / 2;
-  let eps = 1e-7;
+  let eps = 1e-8;
 
   for (let i = 1; i < 100; i++) {
     let err = Math.abs(1.0 - c0 / c);
+
     c0 = c;
 
     c = (b + a) / 2.0;
